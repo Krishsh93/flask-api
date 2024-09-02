@@ -6,7 +6,7 @@ import joblib
 from flask_cors import CORS
 from PIL import Image
 import io
-
+import os
 app = Flask(__name__)
 CORS(app)
 
@@ -260,5 +260,5 @@ def predict_symptoms():
     prediction_list = prediction.tolist()
     
     return jsonify({'predicted_label': prediction_list})
-if __name__ == '__main__':
-    app.run(debug=True)
+if __name__ == "__main__":
+    app.run(host="0.0.0.0", port=int(os.environ.get("PORT", 5000)))
