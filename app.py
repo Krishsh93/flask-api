@@ -260,3 +260,5 @@ def predict_symptoms():
     prediction_list = prediction.tolist()
     
     return jsonify({'predicted_label': prediction_list})
+if __name__ == '__main__':
+    app.run(debug=True)
