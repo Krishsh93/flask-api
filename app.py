@@ -8,7 +8,7 @@ from PIL import Image
 import io
 
 app = Flask(__name__)
-CORS(app, resources={r"/*": {"origins": "*"}})
+CORS(app, resources={r"/*": {"origins": "https://deploy-healthcare.onrender.com"}})
 
 # Load the Keras model for hemorrhage detection
 model_hemorrhage = tf.keras.models.load_model('hemorrhage_detection_model.h5')
